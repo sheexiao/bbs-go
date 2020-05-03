@@ -2,8 +2,8 @@ package repositories
 
 import (
 	"bbs-go/model"
-	"github.com/mlogclub/simple"
 	"github.com/jinzhu/gorm"
+	"github.com/mlogclub/simple"
 )
 
 var UserScoreRepository = newUserScoreRepository()
@@ -83,4 +83,3 @@ func (r *userScoreRepository) UpdateColumn(db *gorm.DB, id int64, name string, v
 func (r *userScoreRepository) Delete(db *gorm.DB, id int64) {
 	db.Delete(&model.UserScore{}, "id = ?", id)
 }
-

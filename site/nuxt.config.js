@@ -1,7 +1,7 @@
 export default {
   server: {
     port: 3000,
-    // host: '0.0.0.0',
+    host: '0.0.0.0',
     timing: {
       total: true
     }
@@ -50,7 +50,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: '//at.alicdn.com/t/font_1142441_zup8j5co1q.css'
+        href: '//at.alicdn.com/t/font_1142441_z0jqg455g7.css'
       }
     ]
   },

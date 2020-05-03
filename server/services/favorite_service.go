@@ -12,8 +12,7 @@ import (
 var FavoriteService = newFavoriteService()
 
 func newFavoriteService() *favoriteService {
-	return &favoriteService{
-	}
+	return &favoriteService{}
 }
 
 type favoriteService struct {
