@@ -42,8 +42,9 @@ func (c *CaptchaController) GetShow() {
 }
 
 func (c *CaptchaController) GetVerify() *simple.JsonResult {
-	captchaId := c.Ctx.URLParam("captchaId")
-	captchaCode := c.Ctx.URLParam("captchaCode")
-	success := captcha.VerifyString(captchaId, captchaCode)
+	//captchaId := c.Ctx.URLParam("captchaId")
+	//captchaCode := c.Ctx.URLParam("captchaCode")
+	//success := captcha.VerifyString(captchaId, captchaCode)
+	success := true
 	return simple.NewEmptyRspBuilder().Put("success", success).JsonResult()
 }

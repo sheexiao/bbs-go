@@ -72,31 +72,6 @@
             </div>
 
             <div class="field">
-              <label class="label">验证码</label>
-              <div class="control has-icons-left">
-                <div class="field is-horizontal">
-                  <div class="field" style="width:100%;">
-                    <input
-                      v-model="captchaCode"
-                      @keyup.enter="signup"
-                      class="input"
-                      type="text"
-                      placeholder="验证码"
-                    />
-                    <span class="icon is-small is-left"
-                      ><i class="iconfont icon-captcha"
-                    /></span>
-                  </div>
-                  <div v-if="captchaUrl" class="field">
-                    <a @click="showCaptcha"
-                      ><img :src="captchaUrl" style="height: 40px;"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="field">
               <div class="control">
                 <button @click="signup" class="button is-success">
                   注册

@@ -136,7 +136,7 @@ func IsValidateUrl(url string) error {
 // 是否是内部图片
 func IsInternalImage(imageUrl string) bool {
 	// TODO @ 2019/12/31 这个地方硬编码了，要修改
-	return strings.Contains(imageUrl, "file.mlog.club") || strings.Contains(imageUrl, "static.mlog.club")
+	return strings.Contains(imageUrl, "localhost") || strings.Contains(imageUrl, "localhost")
 }
 
 // 应用图片样式

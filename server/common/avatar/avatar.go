@@ -11,7 +11,7 @@ import (
 	"github.com/issue9/identicon"
 )
 
-const DefaultAvatar = "https://file.mlog.club/images/default-avatar/default.png"
+const DefaultAvatar = "https://localhost:3000/images/default-avatar/default.png"
 
 var (
 	err                   error

@@ -34,6 +34,8 @@ services:
     image: 'mysql:5.7'
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - '3306:3306'
     volumes:
       - '.docker-compose/mysql/db/conf.d:/etc/mysql/conf.d'
       - '.docker-compose/mysql/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d'

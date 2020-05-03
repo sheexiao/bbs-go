@@ -1,11 +1,9 @@
 package api
 
 import (
-	"github.com/dchest/captcha"
 	"github.com/kataras/iris/v12"
 	"github.com/mlogclub/simple"
 
-	"bbs-go/common"
 	"bbs-go/common/github"
 	"bbs-go/common/qq"
 	"bbs-go/controllers/render"
@@ -20,18 +18,18 @@ type LoginController struct {
 // 注册
 func (c *LoginController) PostSignup() *simple.JsonResult {
 	var (
-		captchaId   = c.Ctx.PostValueTrim("captchaId")
-		captchaCode = c.Ctx.PostValueTrim("captchaCode")
-		email       = c.Ctx.PostValueTrim("email")
-		username    = c.Ctx.PostValueTrim("username")
-		password    = c.Ctx.PostValueTrim("password")
-		rePassword  = c.Ctx.PostValueTrim("rePassword")
-		nickname    = c.Ctx.PostValueTrim("nickname")
-		ref         = c.Ctx.FormValue("ref")
+		//captchaId   = c.Ctx.PostValueTrim("captchaId")
+		//captchaCode = c.Ctx.PostValueTrim("captchaCode")
+		email      = c.Ctx.PostValueTrim("email")
+		username   = c.Ctx.PostValueTrim("username")
+		password   = c.Ctx.PostValueTrim("password")
+		rePassword = c.Ctx.PostValueTrim("rePassword")
+		nickname   = c.Ctx.PostValueTrim("nickname")
+		ref        = c.Ctx.FormValue("ref")
 	)
-	if !captcha.VerifyString(captchaId, captchaCode) {
-		return simple.JsonError(common.CaptchaError)
-	}
+	//if !captcha.VerifyString(captchaId, captchaCode) {
+	//	return simple.JsonError(common.CaptchaError)
+	//}
 	user, err := services.UserService.SignUp(username, email, nickname, password, rePassword)
 	if err != nil {
 		return simple.JsonErrorMsg(err.Error())
@@ -42,15 +40,15 @@ func (c *LoginController) PostSignup() *simple.JsonResult {
 // 用户名密码登录
 func (c *LoginController) PostSignin() *simple.JsonResult {
 	var (
-		captchaId   = c.Ctx.PostValueTrim("captchaId")
-		captchaCode = c.Ctx.PostValueTrim("captchaCode")
-		username    = c.Ctx.PostValueTrim("username")
-		password    = c.Ctx.PostValueTrim("password")
-		ref         = c.Ctx.FormValue("ref")
+		//captchaId   = c.Ctx.PostValueTrim("captchaId")
+		//captchaCode = c.Ctx.PostValueTrim("captchaCode")
+		username = c.Ctx.PostValueTrim("username")
+		password = c.Ctx.PostValueTrim("password")
+		ref      = c.Ctx.FormValue("ref")
 	)
-	if !captcha.VerifyString(captchaId, captchaCode) {
-		return simple.JsonError(common.CaptchaError)
-	}
+	//if !captcha.VerifyString(captchaId, captchaCode) {
+	//	return simple.JsonError(common.CaptchaError)
+	//}
 	user, err := services.UserService.SignIn(username, password)
 	if err != nil {
 		return simple.JsonErrorMsg(err.Error())

@@ -1,7 +1,7 @@
 export default {
   server: {
     port: 3000,
-    host: '0.0.0.0',
+    // host: '0.0.0.0',
     timing: {
       total: true
     }
@@ -108,8 +108,8 @@ export default {
   },
 
   proxy: {
-    // '/api/': 'http://localhost:8082'
-    '/api/': 'https://mlog.club'
+    '/api/': 'http://localhost:8082'
+    // '/api/': 'https://mlog.club'
   },
 
   // Doc: https://github.com/shakee93/vue-toasted
@@ -124,7 +124,7 @@ export default {
    ** Build configuration
    */
   build: {
-    publicPath: 'https://file.mlog.club/static/nuxtclient/',
+    // publicPath: 'http://localhost:3000/static/nuxtclient/',
     optimizeCSS: true,
     extractCSS: true,
     splitChunks: {
